@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Requester</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/ng-google-chart.js"></script>
+</head>
+<body>
+    <div data-ng-app="requester">
+        <div data-ng-controller="ParamsCtrl">
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" data-ng-model="start" class="form-control" placeholder="Start">
+                    <input type="text" data-ng-model="end" class="form-control" placeholder="End">
+                </div>
+                <button type="submit" data-ng-click="send(start, end)" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+        <div data-ng-controller="Chart">
+            <div google-chart chart="chart" style="{{chart.cssStyle}}"></div>
+        </div>
+    </div>
+</body>
+</html>
